@@ -1,0 +1,6 @@
+{
+  "name": "Agent-Driven Sandbox",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "postCreateCommand": "pip install aider-chat python-telegram-bot fastapi uvicorn && curl -L https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -o /usr/local/bin/cloudflared && chmod +x /usr/local/bin/cloudflared",
+  "postStartCommand": "nohup python bot_gateway.py > gateway.log 2>&1 &"
+}
